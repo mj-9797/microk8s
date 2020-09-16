@@ -21,6 +21,12 @@ addons:
 jobs:
   - arch: amd64
   - arch: arm64 
+  - dist: focal
+    language: bash
+    sudo: required
+    group: edge
+    arch: arm64-graviton2
+    virt: vm
 script:
   - sudo chmod 666 /etc/subuid
   - sudo chmod 666 /etc/subgid
@@ -43,4 +49,4 @@ script:
   - ./tests/smoke-test.sh
   - export UNDER_TIME_PRESSURE="True"
   - (cd tests; pytest -s verify-branches.py)
-  - travis_wait 20 (cd tests; sudo -E pytest -s -ra test-addons.py)
+  - travis_wait 20 cd tests; sudo -E pytest -s -ra test-addons.py
