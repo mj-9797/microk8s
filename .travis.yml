@@ -30,6 +30,8 @@ jobs:
 script:
   - sudo chmod 666 /etc/subuid
   - sudo chmod 666 /etc/subgid
+  - echo "root:1000000:65536" >> /etc/subgid
+  - echo "root:1000000:65536" >> /etc/subgid
   - sudo echo "root:1000000:65536" >> sudo /etc/subuid
   - sudo echo "root:1000000:65536" >> sudo /etc/subgid
   - cat /etc/subuid
