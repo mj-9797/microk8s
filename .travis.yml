@@ -22,6 +22,8 @@ jobs:
   - arch: amd64
   - arch: arm64 
 script:
+  - sudo chmod 666 /etc/subuid
+  - sudo chmod 666 /etc/subgid
   - echo "root:1000000:65536" >> sudo /etc/subuid
   - echo "root:1000000:65536" >> sudo /etc/subgid
   - cat /etc/subuid
