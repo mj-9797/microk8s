@@ -17,7 +17,13 @@ addons:
       - python3  
       - python3-pip   
 
+
+jobs:
+  - arch: amd64
+  - arch: arm64 
 script:
+  - cat /etc/subuid
+  - cat /etc/subgid
   - sudo /snap/bin/lxd.migrate -yes
   - sudo /snap/bin/lxd waitready
   - sudo /snap/bin/lxd init --auto
