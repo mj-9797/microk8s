@@ -3,7 +3,8 @@ language: bash
 sudo: required
 group: edge
 arch: arm64-graviton2
-virt: vm  
+virt: vm
+
 addons:
   snaps:
    - name: snapcraft
