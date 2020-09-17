@@ -41,5 +41,5 @@ script:
   - ./tests/smoke-test.sh
   - export UNDER_TIME_PRESSURE="True"
   - (cd tests; pytest -s verify-branches.py)
-  - $trawis_wait 20 cd tests; 
-  - sudo -E pytest -s -ra test-addons.py
+  - cd tests; 
+  - $trawis_wait 20 sudo -E pytest -s -ra test-addons.py
