@@ -254,8 +254,8 @@ def validate_registry():
     storage = pvc_yaml['spec']['resources']['requests']['storage']
     assert re.match("(^[2-9][0-9]{1,}|^[1-9][0-9]{2,})(Gi$)", storage)
     docker("pull busybox")
-    docker("tag busybox my-busybox")
-    docker("push my-busybox")
+    docker("tag busybox localhost:32000/my-busybox")
+    docker("push localhost:32000/my-busybox")
 
     here = os.path.dirname(os.path.abspath(__file__))
     manifest = os.path.join(here, "templates", "bbox-local.yaml")
