@@ -42,7 +42,7 @@ script:
   - export UNDER_TIME_PRESSURE="True"
   - (cd tests; pytest -s verify-branches.py)
   - if [[ "${TRAVIS_CPU_ARCH}" == "arm64" ]]; then
-        cd tests; travis_wait 20 sudo -E pytest -s -ra test-addons.py
+        cd tests; travis_wait 20 sudo -E pytest -s -ra test-addons.py;
     else
-        cd tests; sudo -E pytest -s -ra test-addons.py
+        cd tests; sudo -E pytest -s -ra test-addons.py;
     fi
